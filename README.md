@@ -11,7 +11,7 @@ Prérequis :
 Installation & lancement :
 --------------------------
 1. Cloner le projet :
-   git clone https://github.com/toncompte/tonprojet.git
+   git clone https://github.com/hatimkd/chatbot_api.git
    cd tonprojet
 
 2. (Option Docker) Construire et démarrer les conteneurs Docker :
