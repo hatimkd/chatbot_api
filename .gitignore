@@ -1,0 +1,12 @@
+# Ignorer dossier n8n_data
+n8n_data/
+
+# Ignorer dossier frontend
+frontend/
+
+# Ignorer dossier backend/venv
+backend/venv/
+# Ignorer dossier backend/migrations
+backend/backend/migrations/ 
+
+# Ignorer fichier de configuration de l'environnement

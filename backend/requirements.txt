@@ -1,0 +1,9 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+mysqlclient
+pymongo
+django-cors-headers
+
+mongoengine
+requests

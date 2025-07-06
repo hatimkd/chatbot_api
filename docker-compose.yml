@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: chatbotdb
+      MYSQL_USER: chatuser
+      MYSQL_PASSWORD: chatpass
+    ports:
+      - "3306:3306"
+
+  mongodb:
+    image: mongo
+    container_name: mongo-chat
+    ports:
+      - "27017:27017"
+    
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: django-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+      - mongodb
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=chatbotdb
+      - DB_USER=chatuser
+      - DB_PASSWORD=chatpass
+      - MONGO_URI=mongodb://mongo-chat:27017
+     
+     
+    volumes:
+      - ./backend:/app 
+
+
+    
+volumes:
+  mongo_data:
